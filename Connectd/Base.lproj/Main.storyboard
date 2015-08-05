@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QKQ-4e-ioI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main Tab View Controller-->
@@ -16,13 +17,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="v5r-th-yUH" kind="relationship" relationship="viewControllers" id="UvY-kM-cCo"/>
-                        <segue destination="hkR-2b-oFE" kind="relationship" relationship="viewControllers" id="EnR-G7-9TE"/>
+                        <segue destination="hkR-2b-oFE" kind="relationship" relationship="viewControllers" id="7UZ-IM-Hi0"/>
                         <segue destination="GEJ-dd-Kdk" kind="relationship" relationship="viewControllers" id="FQQ-ho-Irg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIX-xp-5bq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-159" y="322"/>
+            <point key="canvasLocation" x="-377" y="322"/>
         </scene>
         <!--Links-->
         <scene sceneID="Mma-91-Y9H">
@@ -45,17 +46,20 @@
                             <outlet property="delegate" destination="g4S-u4-xBe" id="DXi-sh-VrK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="hq1-e0-pKf"/>
+                    <navigationItem key="navigationItem" title="Link your devices" id="XWW-43-RIb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1op-bI-pCC"/>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PuR-EO-w3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1632" y="1802"/>
+            <point key="canvasLocation" x="1632" y="1162"/>
         </scene>
         <!--Links-->
         <scene sceneID="pIv-xF-9Nb">
             <objects>
                 <navigationController title="Links" id="GEJ-dd-Kdk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Links" image="Link" id="197-u2-c36"/>
+                    <tabBarItem key="tabBarItem" title="Link Devices" image="Link tab unfilled" selectedImage="Link tab filled" id="197-u2-c36"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oLY-O5-hzF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -66,22 +70,71 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZB-AZ-aX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="812" y="1802"/>
+            <point key="canvasLocation" x="812" y="1162"/>
         </scene>
         <!--Add Homes-->
         <scene sceneID="Bzx-Mq-hsL">
             <objects>
                 <tableViewController title="Add Homes" id="8Cv-hP-U92" customClass="homesTableViewController" customModule="Connectd" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="22" sectionFooterHeight="22" id="1O7-5i-ihC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="1O7-5i-ihC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="85" id="QWe-fk-kxO" customClass="homesTableViewCell" customModule="Connectd" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeCell" rowHeight="90" id="QWe-fk-kxO" customClass="homesTableViewCell" customModule="Connectd" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QWe-fk-kxO" id="buf-di-HDC">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddG-vv-uaz">
+                                            <rect key="frame" x="108" y="17" width="97" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of rooms" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeM-CP-02o">
+                                            <rect key="frame" x="108" y="41" width="105" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.54442866160000003" green="0.54442866160000003" blue="0.54442866160000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Number of accessories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Umw-RH-BdS">
+                                            <rect key="frame" x="108" y="51" width="167" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.54442866160000003" green="0.54442866160000003" blue="0.54442866160000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home" translatesAutoresizingMaskIntoConstraints="NO" id="E1d-wd-0aH">
+                                            <rect key="frame" x="28" y="17" width="59" height="54"/>
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="59" id="92n-Xe-1X3"/>
+                                                <constraint firstAttribute="height" constant="54" id="LNr-Yw-2T6"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="LeM-CP-02o" secondAttribute="trailing" constant="379" id="2Ls-da-vGS"/>
+                                        <constraint firstItem="Umw-RH-BdS" firstAttribute="leading" secondItem="E1d-wd-0aH" secondAttribute="trailing" constant="21" id="4CG-0d-Hlf"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="LeM-CP-02o" secondAttribute="bottom" constant="24.5" id="5jL-6E-dMW"/>
+                                        <constraint firstItem="ddG-vv-uaz" firstAttribute="top" secondItem="buf-di-HDC" secondAttribute="topMargin" constant="9" id="9iS-b3-ylv"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Umw-RH-BdS" secondAttribute="bottom" constant="8.5" id="A9o-va-opJ"/>
+                                        <constraint firstItem="E1d-wd-0aH" firstAttribute="top" secondItem="buf-di-HDC" secondAttribute="topMargin" constant="9" id="Nci-m2-m9I"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="E1d-wd-0aH" secondAttribute="bottom" constant="10" id="dMU-TE-y6G"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ddG-vv-uaz" secondAttribute="trailing" constant="387" id="ibM-GN-6Vl"/>
+                                        <constraint firstItem="ddG-vv-uaz" firstAttribute="leading" secondItem="E1d-wd-0aH" secondAttribute="trailing" constant="21" id="jm4-DF-ZI4"/>
+                                        <constraint firstItem="Umw-RH-BdS" firstAttribute="top" secondItem="ddG-vv-uaz" secondAttribute="bottom" constant="13" id="ntL-H8-kCY"/>
+                                        <constraint firstItem="LeM-CP-02o" firstAttribute="leading" secondItem="E1d-wd-0aH" secondAttribute="trailing" constant="21" id="qJm-g2-0cz"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Umw-RH-BdS" secondAttribute="trailing" constant="317" id="qu7-LB-AAl"/>
+                                        <constraint firstItem="E1d-wd-0aH" firstAttribute="leading" secondItem="buf-di-HDC" secondAttribute="leadingMargin" constant="20" id="zrL-fI-3c3"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="homeNameLabel" destination="ddG-vv-uaz" id="xf5-nE-oYR"/>
+                                    <outlet property="numberOfAccessoriesLabel" destination="Umw-RH-BdS" id="vD4-AQ-dCr"/>
+                                    <outlet property="numberOfRoomsLabel" destination="LeM-CP-02o" id="2Nh-WT-1eN"/>
+                                    <segue destination="sAO-lF-UPy" kind="show" id="fLe-G5-hrA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -90,19 +143,52 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Homes" id="G5y-GX-Sif">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jNe-h0-ojj"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="jNe-h0-ojj">
+                            <connections>
+                                <action selector="addAlertView:" destination="8Cv-hP-U92" id="4wk-GG-8cI"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Settings tab filled" id="fEr-hb-TJC"/>
                     </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfS-kV-lBr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1632" y="-1676"/>
+            <point key="canvasLocation" x="1632" y="-476"/>
         </scene>
-        <!--Homes-->
+        <!--Rooms-->
+        <scene sceneID="k11-kq-oTo">
+            <objects>
+                <viewController title="Rooms" id="sAO-lF-UPy" customClass="roomsTableViewController" customModule="Connectd" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fQ2-gt-3yM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Da7-VE-4yl">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Da7-VE-4yl" id="YJW-Zw-OxB">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Add a Room" id="gMM-cV-o1b">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9Xk-gV-6Ik"/>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQK-wT-Mge" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2485" y="-476"/>
+        </scene>
+        <!--Home-->
         <scene sceneID="WWM-FI-Zpd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rvJ-PX-BCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="v5r-th-yUH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Homes" image="Home" id="KQA-SA-ayq"/>
+                <navigationController modalTransitionStyle="crossDissolve" hidesBottomBarWhenPushed="YES" id="v5r-th-yUH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="Home tab unfilled" selectedImage="Home" id="KQA-SA-ayq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0JD-fm-2dF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -111,8 +197,9 @@
                         <segue destination="8Cv-hP-U92" kind="relationship" relationship="rootViewController" id="CF5-zd-ovk"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rvJ-PX-BCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="812" y="-1676"/>
+            <point key="canvasLocation" x="812" y="-476"/>
         </scene>
         <!--Actions-->
         <scene sceneID="1hY-eg-k2C">
@@ -143,16 +230,16 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixg-xW-eA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1632" y="322"/>
         </scene>
-        <!--View Controller-->
+        <!--FInding Accessories-->
         <scene sceneID="fco-i9-TgL">
             <objects>
-                <viewController id="5sM-wY-t72" sceneMemberID="viewController">
+                <viewController title="FInding Accessories" id="5sM-wY-t72" customClass="accessoryFinderTableViewController" customModule="Connectd" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CVB-4e-9rr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -163,12 +250,12 @@
             </objects>
             <point key="canvasLocation" x="2485" y="322"/>
         </scene>
-        <!--Actions-->
+        <!--Control Devices-->
         <scene sceneID="bcV-uS-Gik">
             <objects>
                 <navigationController id="hkR-2b-oFE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Actions" image="Actions" id="kMf-VE-sC6"/>
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBarItem key="tabBarItem" title="Control Devices" image="Actions tab unfilled" selectedImage="Actions tab filled" id="kMf-VE-sC6"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vLM-Nm-7vw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -183,8 +270,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Actions" width="25" height="25"/>
-        <image name="Home" width="25" height="25"/>
-        <image name="Link" width="25" height="25"/>
+        <image name="Actions tab filled" width="25" height="25"/>
+        <image name="Actions tab unfilled" width="25" height="25"/>
+        <image name="Home" width="1365" height="1365"/>
+        <image name="Home tab unfilled" width="25" height="25"/>
+        <image name="Link tab filled" width="25" height="25"/>
+        <image name="Link tab unfilled" width="25" height="25"/>
+        <image name="Settings tab filled" width="25" height="25"/>
     </resources>
 </document>

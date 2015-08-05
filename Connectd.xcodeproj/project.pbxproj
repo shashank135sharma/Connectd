@@ -21,9 +21,8 @@
 		98B124031B6FAB3E00D5F205 /* accessoryLinkerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B124021B6FAB3E00D5F205 /* accessoryLinkerTableViewCell.swift */; };
 		98B124051B6FAB4A00D5F205 /* accessoryLinkerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B124041B6FAB4A00D5F205 /* accessoryLinkerTableViewController.swift */; };
 		98B124091B6FAFD000D5F205 /* AppLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B124081B6FAFD000D5F205 /* AppLogic.swift */; };
-		98B1240B1B6FBB6D00D5F205 /* addHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1240A1B6FBB6D00D5F205 /* addHomeViewController.swift */; };
-		98B1240D1B6FBB7500D5F205 /* addRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B1240C1B6FBB7500D5F205 /* addRoomViewController.swift */; };
-		98B1240F1B6FCAF900D5F205 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B1240E1B6FCAF900D5F205 /* Images.xcassets */; };
+		98B1243C1B7158CD00D5F205 /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B124131B7158CD00D5F205 /* JSSAlertView.swift */; };
+		98CCBFE61B7269680090818F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98CCBFE51B7269680090818F /* Images.xcassets */; };
 		98EB73C31B6BE65100116D07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EB73C21B6BE65100116D07 /* AppDelegate.swift */; };
 		98EB73C81B6BE65100116D07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98EB73C61B6BE65100116D07 /* Main.storyboard */; };
 		98EB73CD1B6BE65100116D07 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98EB73CB1B6BE65100116D07 /* LaunchScreen.xib */; };
@@ -58,9 +57,8 @@
 		98B124041B6FAB4A00D5F205 /* accessoryLinkerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accessoryLinkerTableViewController.swift; sourceTree = "<group>"; };
 		98B124061B6FAB5D00D5F205 /* Connectd.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Connectd.entitlements; sourceTree = "<group>"; };
 		98B124081B6FAFD000D5F205 /* AppLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogic.swift; sourceTree = "<group>"; };
-		98B1240A1B6FBB6D00D5F205 /* addHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addHomeViewController.swift; sourceTree = "<group>"; };
-		98B1240C1B6FBB7500D5F205 /* addRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addRoomViewController.swift; sourceTree = "<group>"; };
-		98B1240E1B6FCAF900D5F205 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../.Trash/Images.xcassets; sourceTree = "<group>"; };
+		98B124131B7158CD00D5F205 /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
+		98CCBFE51B7269680090818F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		98EB73BD1B6BE65100116D07 /* Connectd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connectd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98EB73C11B6BE65100116D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98EB73C21B6BE65100116D07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,13 +91,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98B124101B7158CD00D5F205 /* JSSAlertView-master */ = {
+			isa = PBXGroup;
+			children = (
+				98B124131B7158CD00D5F205 /* JSSAlertView.swift */,
+			);
+			name = "JSSAlertView-master";
+			path = "../../../../Downloads/JSSAlertView-master";
+			sourceTree = "<group>";
+		};
 		98EB73B41B6BE65100116D07 = {
 			isa = PBXGroup;
 			children = (
 				98EB73E41B6BE66000116D07 /* ExternalAccessory.framework */,
 				98EB73E21B6BE65A00116D07 /* HomeKit.framework */,
 				98EB73BF1B6BE65100116D07 /* Connectd */,
-				98B1240E1B6FCAF900D5F205 /* Images.xcassets */,
 				98EB73D51B6BE65100116D07 /* ConnectdTests */,
 				98EB73BE1B6BE65100116D07 /* Products */,
 			);
@@ -119,8 +125,9 @@
 			children = (
 				98B124061B6FAB5D00D5F205 /* Connectd.entitlements */,
 				98B123F41B6FAA9A00D5F205 /* homeManager.swift */,
-				98EB73C21B6BE65100116D07 /* AppDelegate.swift */,
 				98B124081B6FAFD000D5F205 /* AppLogic.swift */,
+				98EB73C21B6BE65100116D07 /* AppDelegate.swift */,
+				98B124101B7158CD00D5F205 /* JSSAlertView-master */,
 				98EB73C61B6BE65100116D07 /* Main.storyboard */,
 				98EB73CB1B6BE65100116D07 /* LaunchScreen.xib */,
 				98EB73EB1B6BEBA000116D07 /* AccessoryLinker */,
@@ -130,6 +137,7 @@
 				98EB73E71B6BEB5800116D07 /* Rooms */,
 				98EB73E61B6BEB4800116D07 /* Home */,
 				98EB73C01B6BE65100116D07 /* Supporting Files */,
+				98CCBFE51B7269680090818F /* Images.xcassets */,
 			);
 			path = Connectd;
 			sourceTree = "<group>";
@@ -164,7 +172,6 @@
 			children = (
 				98B123EC1B6FAA6100D5F205 /* homesTableViewController.swift */,
 				98B123EE1B6FAA7600D5F205 /* homesTableViewCell.swift */,
-				98B1240A1B6FBB6D00D5F205 /* addHomeViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -174,7 +181,6 @@
 			children = (
 				98B123F01B6FAA8200D5F205 /* roomsTableViewCell.swift */,
 				98B123F21B6FAA8D00D5F205 /* roomsTableViewController.swift */,
-				98B1240C1B6FBB7500D5F205 /* addRoomViewController.swift */,
 			);
 			name = Rooms;
 			sourceTree = "<group>";
@@ -296,9 +302,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98B1240F1B6FCAF900D5F205 /* Images.xcassets in Resources */,
 				98EB73C81B6BE65100116D07 /* Main.storyboard in Resources */,
 				98EB73CD1B6BE65100116D07 /* LaunchScreen.xib in Resources */,
+				98CCBFE61B7269680090818F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98B1240D1B6FBB7500D5F205 /* addRoomViewController.swift in Sources */,
+				98B1243C1B7158CD00D5F205 /* JSSAlertView.swift in Sources */,
 				98B124091B6FAFD000D5F205 /* AppLogic.swift in Sources */,
 				98B124031B6FAB3E00D5F205 /* accessoryLinkerTableViewCell.swift in Sources */,
 				98EB73C31B6BE65100116D07 /* AppDelegate.swift in Sources */,
@@ -324,7 +330,6 @@
 				98B124011B6FAB2D00D5F205 /* accessoryActionsTableViewCell.swift in Sources */,
 				98B123EF1B6FAA7600D5F205 /* homesTableViewCell.swift in Sources */,
 				98B123F51B6FAA9A00D5F205 /* homeManager.swift in Sources */,
-				98B1240B1B6FBB6D00D5F205 /* addHomeViewController.swift in Sources */,
 				98B123ED1B6FAA6100D5F205 /* homesTableViewController.swift in Sources */,
 				98B123F71B6FAAE000D5F205 /* accessoryFinderTableViewController.swift in Sources */,
 				98B124051B6FAB4A00D5F205 /* accessoryLinkerTableViewController.swift in Sources */,

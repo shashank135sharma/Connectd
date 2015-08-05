@@ -12,7 +12,9 @@ import HomeKit
 class HomeManager: HMHomeManager, HMAccessoryBrowserDelegate, HMHomeManagerDelegate {
     static let sharedInstance = HomeManager()
     
-    lazy var accesoryBrowser: HMAccessoryBrowser = {
+    var totalAccessories: [HMAccessory]?
+    
+    lazy var accesoryBrowserFromManager: HMAccessoryBrowser = {
         let browser = HMAccessoryBrowser()
         browser.delegate = self
         return browser
