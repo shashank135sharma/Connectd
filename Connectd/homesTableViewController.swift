@@ -10,8 +10,8 @@ import UIKit
 import HomeKit
 
 class homesTableViewController: UITableViewController {
-    let homeManager = HomeManager.sharedInstance
 
+    let homeManager = HomeManager.sharedInstance
     
     override func viewDidLoad() {
         tableView.delegate = self
@@ -41,6 +41,11 @@ class homesTableViewController: UITableViewController {
         // Return the number of sections.
         return 1
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        homeManager.currentHomeIndex = indexPath.row
+        homeManager.updatePrimaryHome(homeManager.homes[indexPath.row] as! HMHome, completionHandler: nil)
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
@@ -65,7 +70,7 @@ class homesTableViewController: UITableViewController {
         
         actionSheetController.addTextFieldWithConfigurationHandler { textField -> Void in
             inputTextField = textField
-            inputTextField?.placeholder = "Living Room"
+            inputTextField?.placeholder = "Beach house"
         }
         //Create and add the Cancel action
         let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in

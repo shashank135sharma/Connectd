@@ -7,18 +7,27 @@
 //
 
 import UIKit
+import HomeKit
 
 class roomsTableViewCell: UITableViewCell {
 
+    let homeManager = HomeManager.sharedInstance
+    
+    @IBOutlet weak var roomNameLabel: UILabel!
+    @IBOutlet weak var numAccessoriesLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
+    func setUpCell(homeIndex: Int, roomIndex: Int) {
+        var room = homeManager.homes[homeIndex].rooms?[roomIndex] as! HMRoom
+        roomNameLabel.text = "\(room.name)"
+        numAccessoriesLabel.text = "Number of accessories: \(room.accessories?.count)"
+        
+    }
 }

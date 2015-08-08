@@ -87,25 +87,25 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddG-vv-uaz">
-                                            <rect key="frame" x="108" y="17" width="97" height="20.5"/>
+                                            <rect key="frame" x="118" y="19" width="97" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of rooms" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeM-CP-02o">
-                                            <rect key="frame" x="108" y="41" width="105" height="16"/>
+                                            <rect key="frame" x="118" y="41" width="105" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.54442866160000003" green="0.54442866160000003" blue="0.54442866160000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Number of accessories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Umw-RH-BdS">
-                                            <rect key="frame" x="108" y="51" width="167" height="22"/>
+                                            <rect key="frame" x="118" y="50.5" width="167" height="22.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.54442866160000003" green="0.54442866160000003" blue="0.54442866160000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home" translatesAutoresizingMaskIntoConstraints="NO" id="E1d-wd-0aH">
-                                            <rect key="frame" x="28" y="17" width="59" height="54"/>
+                                            <rect key="frame" x="28" y="18" width="59" height="54"/>
                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="59" id="92n-Xe-1X3"/>
@@ -114,20 +114,25 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="LeM-CP-02o" secondAttribute="trailing" constant="379" id="2Ls-da-vGS"/>
-                                        <constraint firstItem="Umw-RH-BdS" firstAttribute="leading" secondItem="E1d-wd-0aH" secondAttribute="trailing" constant="21" id="4CG-0d-Hlf"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="LeM-CP-02o" secondAttribute="trailing" constant="369" id="2Ls-da-vGS"/>
+                                        <constraint firstItem="Umw-RH-BdS" firstAttribute="leading" secondItem="E1d-wd-0aH" secondAttribute="trailing" constant="31" id="4CG-0d-Hlf"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="LeM-CP-02o" secondAttribute="bottom" constant="24.5" id="5jL-6E-dMW"/>
-                                        <constraint firstItem="ddG-vv-uaz" firstAttribute="top" secondItem="buf-di-HDC" secondAttribute="topMargin" constant="9" id="9iS-b3-ylv"/>
+                                        <constraint firstItem="ddG-vv-uaz" firstAttribute="top" secondItem="buf-di-HDC" secondAttribute="topMargin" constant="11" id="9iS-b3-ylv"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Umw-RH-BdS" secondAttribute="bottom" constant="8.5" id="A9o-va-opJ"/>
-                                        <constraint firstItem="E1d-wd-0aH" firstAttribute="top" secondItem="buf-di-HDC" secondAttribute="topMargin" constant="9" id="Nci-m2-m9I"/>
+                                        <constraint firstItem="E1d-wd-0aH" firstAttribute="top" secondItem="buf-di-HDC" secondAttribute="topMargin" constant="10" id="Nci-m2-m9I"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="E1d-wd-0aH" secondAttribute="bottom" constant="10" id="dMU-TE-y6G"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="ddG-vv-uaz" secondAttribute="trailing" constant="387" id="ibM-GN-6Vl"/>
-                                        <constraint firstItem="ddG-vv-uaz" firstAttribute="leading" secondItem="E1d-wd-0aH" secondAttribute="trailing" constant="21" id="jm4-DF-ZI4"/>
-                                        <constraint firstItem="Umw-RH-BdS" firstAttribute="top" secondItem="ddG-vv-uaz" secondAttribute="bottom" constant="13" id="ntL-H8-kCY"/>
-                                        <constraint firstItem="LeM-CP-02o" firstAttribute="leading" secondItem="E1d-wd-0aH" secondAttribute="trailing" constant="21" id="qJm-g2-0cz"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Umw-RH-BdS" secondAttribute="trailing" constant="317" id="qu7-LB-AAl"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ddG-vv-uaz" secondAttribute="trailing" constant="377" id="ibM-GN-6Vl"/>
+                                        <constraint firstItem="ddG-vv-uaz" firstAttribute="leading" secondItem="E1d-wd-0aH" secondAttribute="trailing" constant="31" id="jm4-DF-ZI4"/>
+                                        <constraint firstItem="Umw-RH-BdS" firstAttribute="top" secondItem="ddG-vv-uaz" secondAttribute="bottom" constant="11" id="ntL-H8-kCY"/>
+                                        <constraint firstItem="LeM-CP-02o" firstAttribute="leading" secondItem="E1d-wd-0aH" secondAttribute="trailing" constant="31" id="qJm-g2-0cz"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Umw-RH-BdS" secondAttribute="trailing" constant="307" id="qu7-LB-AAl"/>
                                         <constraint firstItem="E1d-wd-0aH" firstAttribute="leading" secondItem="buf-di-HDC" secondAttribute="leadingMargin" constant="20" id="zrL-fI-3c3"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="dMU-TE-y6G"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="homeNameLabel" destination="ddG-vv-uaz" id="xf5-nE-oYR"/>
@@ -142,19 +147,41 @@
                             <outlet property="delegate" destination="8Cv-hP-U92" id="h3W-iY-OOH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Homes" id="G5y-GX-Sif">
+                    <navigationItem key="navigationItem" title="Homes" id="G5y-GX-Sif" colorLabel="IBBuiltInLabel-Gray">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="jNe-h0-ojj">
                             <connections>
                                 <action selector="addAlertView:" destination="8Cv-hP-U92" id="4wk-GG-8cI"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="Settings tab filled" id="fEr-hb-TJC"/>
+                        <barButtonItem key="rightBarButtonItem" image="Settings tab filled" id="fEr-hb-TJC">
+                            <connections>
+                                <segue destination="9YT-CF-ggt" kind="show" id="rPG-nz-KhK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfS-kV-lBr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1632" y="-476"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="WPt-9m-ZMO">
+            <objects>
+                <viewController id="9YT-CF-ggt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="No1-dW-xUA"/>
+                        <viewControllerLayoutGuide type="bottom" id="b2O-gl-R0v"/>
+                    </layoutGuides>
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="cN9-rv-Htn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </scrollView>
+                    <navigationItem key="navigationItem" title="Settings" id="cWZ-Kq-F8T"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ABN-g8-c0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2485" y="-1176"/>
         </scene>
         <!--Rooms-->
         <scene sceneID="k11-kq-oTo">
@@ -165,18 +192,55 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Da7-VE-4yl">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="roomCell" rowHeight="90" id="Da7-VE-4yl" customClass="roomsTableViewCell" customModule="Connectd" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Da7-VE-4yl" id="YJW-Zw-OxB">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuJ-gf-UYe">
+                                            <rect key="frame" x="113" y="27" width="96.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of accessories assigned to room" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bo2-0y-tkQ">
+                                            <rect key="frame" x="113" y="49" width="247" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.54442866160000003" green="0.54442866160000003" blue="0.54442866160000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Living Room Filled" translatesAutoresizingMaskIntoConstraints="NO" id="tHN-mh-0Jc">
+                                            <rect key="frame" x="28" y="15" width="54" height="59"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="54" id="la4-4L-rdK"/>
+                                                <constraint firstAttribute="height" constant="59" id="sc1-g7-3oq"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bo2-0y-tkQ" firstAttribute="top" secondItem="YJW-Zw-OxB" secondAttribute="topMargin" constant="41" id="IOq-t8-q41"/>
+                                        <constraint firstItem="tHN-mh-0Jc" firstAttribute="top" secondItem="YJW-Zw-OxB" secondAttribute="topMargin" constant="7" id="LUh-fh-TJ0"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="bo2-0y-tkQ" secondAttribute="trailing" constant="232" id="cc8-X7-9Th"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="DuJ-gf-UYe" secondAttribute="trailing" constant="382" id="q1V-qE-uJZ"/>
+                                        <constraint firstItem="tHN-mh-0Jc" firstAttribute="leading" secondItem="YJW-Zw-OxB" secondAttribute="leadingMargin" constant="20" id="vo2-la-Qhr"/>
+                                        <constraint firstItem="DuJ-gf-UYe" firstAttribute="top" secondItem="YJW-Zw-OxB" secondAttribute="topMargin" constant="19" id="yqC-gJ-6xS"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="numAcessoriesLabel" destination="bo2-0y-tkQ" id="Q4m-9a-KfV"/>
+                                    <outlet property="roomNameLabel" destination="DuJ-gf-UYe" id="E2Y-Ue-C63"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Add a Room" id="gMM-cV-o1b">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9Xk-gV-6Ik"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9Xk-gV-6Ik">
+                            <connections>
+                                <action selector="addButton:" destination="sAO-lF-UPy" id="ehZ-jf-Ddu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -188,7 +252,7 @@
         <scene sceneID="WWM-FI-Zpd">
             <objects>
                 <navigationController modalTransitionStyle="crossDissolve" hidesBottomBarWhenPushed="YES" id="v5r-th-yUH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="Home tab unfilled" selectedImage="Home" id="KQA-SA-ayq"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home tab unfilled" selectedImage="Home tab unfilled" id="KQA-SA-ayq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0JD-fm-2dF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -276,6 +340,7 @@
         <image name="Home tab unfilled" width="25" height="25"/>
         <image name="Link tab filled" width="25" height="25"/>
         <image name="Link tab unfilled" width="25" height="25"/>
+        <image name="Living Room Filled" width="1365" height="1365"/>
         <image name="Settings tab filled" width="25" height="25"/>
     </resources>
 </document>

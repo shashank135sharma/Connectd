@@ -1,25 +1,31 @@
 //
 //  accessoryListTableViewController.swift
 //  Connectd
-//
-//  Created by Shashank Sharma on 8/3/15.
+////  Created by Shashank Sharma on 8/3/15.
+
 //  Copyright (c) 2015 Shashank Sharma. All rights reserved.
 //
 
 import UIKit
+import HomeKit
 
 class accessoryListTableViewController: UITableViewController {
 
+    let homeManager = HomeManager.sharedInstance
+    var room: HMRoom?
+    
     override func viewDidLoad() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.reloadData()
+        room = homeManager.homes[homeManager.currentHomeIndex].rooms?[homeManager.currentRoomIndex] as? HMRoom
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -30,7 +36,7 @@ class accessoryListTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

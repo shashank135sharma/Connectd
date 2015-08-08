@@ -14,7 +14,7 @@ class HomeManager: HMHomeManager, HMAccessoryBrowserDelegate, HMHomeManagerDeleg
     
     var totalAccessories: [HMAccessory]?
     
-    lazy var accesoryBrowserFromManager: HMAccessoryBrowser = {
+    lazy var accessoryBrowserFromManager: HMAccessoryBrowser = {
         let browser = HMAccessoryBrowser()
         browser.delegate = self
         return browser
