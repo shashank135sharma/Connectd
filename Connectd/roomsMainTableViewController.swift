@@ -1,27 +1,31 @@
 //
-//  accessoryActionsTableViewController.swift
+//  roomsMainTableViewController.swift
 //  Connectd
 //
-//  Created by Shashank Sharma on 8/3/15.
+//  Created by Shashank Sharma on 8/11/15.
 //  Copyright (c) 2015 Shashank Sharma. All rights reserved.
 //
 
 import UIKit
+import HomeKit
 
-class accessoryActionsTableViewController: UITableViewController {
-
-    let homeManager = HomeManager.sharedInstance
+class roomsMainTableViewController: UITableViewController {
     
+    let homeManager = HomeManager.sharedInstance
+
     override func viewDidLoad() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.reloadData()
+        
+        navigationController?.navigationBar.backItem?.title = "Homes"
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -38,7 +42,12 @@ class accessoryActionsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        if(homeManager.homes[homeManager.currentHomeIndex].rooms?.isEmpty == false){
+            return homeManager.homes[homeManager.currentHomeIndex].rooms!.count
+        }
+        else{
+            return 0
+        }
     }
 
     /*

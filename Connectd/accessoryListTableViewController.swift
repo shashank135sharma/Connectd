@@ -12,13 +12,13 @@ import HomeKit
 class accessoryListTableViewController: UITableViewController {
 
     let homeManager = HomeManager.sharedInstance
-    var room: HMRoom?
-    
+
     override func viewDidLoad() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.reloadData()
-        room = homeManager.homes[homeManager.currentHomeIndex].rooms?[homeManager.currentRoomIndex] as? HMRoom
+        
+
         super.viewDidLoad()
     }
 
@@ -42,18 +42,24 @@ class accessoryListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
+        if(homeManager.primaryHome != nil){
+            return homeManager.primaryHome.accessories.count
+        }
         return 0
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("accessoryListCell", forIndexPath: indexPath) as! accessoryListTableViewCell
+        
+        cell.setUpCell(homeManager.primaryHome.accessories[indexPath.row].name)
+        //characteristics are types of actions - turning on off sliders, etc.
+        //make different cells for each of the actions
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        homeManager.currentAccessoryIndex = indexPath.row
+    }
 
     /*
     // Override to support conditional editing of the table view.

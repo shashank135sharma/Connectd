@@ -7,13 +7,26 @@
 //
 
 import UIKit
+import HomeKit
 
-class accessoryFinderTableViewController: UITableViewController {
-
+class accessoryFinderTableViewController: UITableViewController, HMAccessoryBrowserDelegate{
+    
+    let homeManager = HomeManager.sharedInstance
+    var selectedAccessories: [HMAccessory]?
+    var discoveredAccessories: [HMAccessory]?
+    
+    lazy var mainBrowser: HMAccessoryBrowser = {
+        let browser = HMAccessoryBrowser()
+        browser.delegate = self
+        return browser
+        }()
+    
     override func viewDidLoad() {
+        mainBrowser.startSearchingForNewAccessories()
         tableView.dataSource=self
         tableView.delegate = self
         tableView.reloadData()
+        
         super.viewDidLoad()
     }
 
@@ -31,25 +44,64 @@ class accessoryFinderTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        if((discoveredAccessories?.isEmpty) == false) {
+            println("Accessory Found: \(discoveredAccessories!.count)")
+            return discoveredAccessories!.count
+        }
+        else {
+            return 0
+        }
     }
-
-    /*
+    
+    override func viewDidDisappear(animated: Bool) {
+        mainBrowser.stopSearchingForNewAccessories()
+    }
+    
+    func accessoryBrowser(browser: HMAccessoryBrowser, didFindNewAccessory accessory: HMAccessory!) {
+        print("Accessory found")
+        println(accessory.name)
+        discoveredAccessories?.append(accessory as HMAccessory)
+        for service in accessory.services {
+            println(service.name)
+        }
+    }
+    
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("accessoryFinderCell", forIndexPath: indexPath) as! accessoryFinderTableViewCell
+        
+        var accessory: HMAccessory = discoveredAccessories![indexPath.row]
+        
         // Configure the cell...
-
+        cell.setUpCell(accessory.name)
         return cell
     }
-    */
-
+ 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedAccessories?.append(discoveredAccessories![indexPath.row] as HMAccessory)
+    }
+    
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedAccessories!.removeAtIndex(indexPath.row)
+    }
+    
+    @IBAction func doneSelecting(sender: AnyObject) {
+        if((selectedAccessories?.isEmpty) == false) {
+            for accessory in selectedAccessories! {
+                homeManager.addAccessory(accessory, completion: { (errorMessage) -> Void in
+                    println("Selected message error: \(errorMessage)")
+                })
+            }
+        }
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

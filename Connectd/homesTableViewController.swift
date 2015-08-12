@@ -18,7 +18,9 @@ class homesTableViewController: UITableViewController {
         tableView.dataSource = self
         tableView.reloadData()
         super.viewDidLoad()
+        tableView.reloadData()
 
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -44,7 +46,9 @@ class homesTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         homeManager.currentHomeIndex = indexPath.row
-        homeManager.updatePrimaryHome(homeManager.homes[indexPath.row] as! HMHome, completionHandler: nil)
+        homeManager.updatePrimaryHome(homeManager.homes[indexPath.row] as! HMHome, completionHandler: { (error) -> Void in
+            println("Home Error: \(error)")
+        })
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,7 +97,6 @@ class homesTableViewController: UITableViewController {
         self.presentViewController(actionSheetController, animated: true, completion: nil)
 
     }
-    
 
     /*
     // Override to support conditional editing of the table view.

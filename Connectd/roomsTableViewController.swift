@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HomeKit
 
 class roomsTableViewController: UITableViewController {
 
@@ -31,7 +32,7 @@ class roomsTableViewController: UITableViewController {
         let nextAction: UIAlertAction = UIAlertAction(title: "Save", style: .Default) { action -> Void in
             
             self.homeManager.addRoom(inputTextField!.text, completion: { (errorMessage) -> Void in
-                println(errorMessage)
+                println("room adding error \(errorMessage)")
             })
             self.tableView.reloadData()
         }
@@ -45,7 +46,6 @@ class roomsTableViewController: UITableViewController {
     override func viewDidLoad() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.reloadData()
         
         navigationController?.navigationBar.backItem?.title = "Homes"
 
@@ -70,6 +70,7 @@ class roomsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         homeManager.currentRoomIndex = indexPath.row
+        tableView.reloadData()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -81,12 +82,17 @@ class roomsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return homeManager.primaryHome.rooms.count
+        if(homeManager.homes[homeManager.currentHomeIndex].rooms != nil){
+            return homeManager.homes[homeManager.currentHomeIndex].rooms!.count
+        }
+        else{
+            return 0
+        }
     }
+
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("roomsCell", forIndexPath: indexPath) as! roomsTableViewCell
-        
         cell.setUpCell(homeManager.currentHomeIndex,roomIndex: homeManager.currentRoomIndex)
         return cell
     }

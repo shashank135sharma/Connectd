@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9847A28C1B7A8CF9002AA008 /* IntroScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9847A28B1B7A8CF9002AA008 /* IntroScreenViewController.swift */; };
+		9847A28F1B7BBE5E002AA008 /* powerStateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9847A28E1B7BBE5E002AA008 /* powerStateTableViewCell.swift */; };
+		9847A2911B7BBE78002AA008 /* brightnessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9847A2901B7BBE78002AA008 /* brightnessTableViewCell.swift */; };
+		9847A2931B7BBE8D002AA008 /* desiredTempTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9847A2921B7BBE8D002AA008 /* desiredTempTableViewCell.swift */; };
+		9847A2951B7BBE9F002AA008 /* currentTempTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9847A2941B7BBE9F002AA008 /* currentTempTableViewCell.swift */; };
+		9847A2971B7BBEB1002AA008 /* saturationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9847A2961B7BBEB1002AA008 /* saturationTableViewCell.swift */; };
+		9847A2991B7BBECC002AA008 /* targetHeatingCoolingModeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9847A2981B7BBECC002AA008 /* targetHeatingCoolingModeTableViewCell.swift */; };
+		9847A29B1B7BBEE7002AA008 /* currentDoorLockStateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9847A29A1B7BBEE7002AA008 /* currentDoorLockStateTableViewCell.swift */; };
+		9847A29D1B7BBEF0002AA008 /* fanPowerLevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9847A29C1B7BBEF0002AA008 /* fanPowerLevelTableViewCell.swift */; };
 		98B123ED1B6FAA6100D5F205 /* homesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B123EC1B6FAA6100D5F205 /* homesTableViewController.swift */; };
 		98B123EF1B6FAA7600D5F205 /* homesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B123EE1B6FAA7600D5F205 /* homesTableViewCell.swift */; };
 		98B123F11B6FAA8200D5F205 /* roomsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B123F01B6FAA8200D5F205 /* roomsTableViewCell.swift */; };
 		98B123F31B6FAA8D00D5F205 /* roomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B123F21B6FAA8D00D5F205 /* roomsTableViewController.swift */; };
 		98B123F51B6FAA9A00D5F205 /* homeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B123F41B6FAA9A00D5F205 /* homeManager.swift */; };
-		98B123F71B6FAAE000D5F205 /* accessoryFinderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B123F61B6FAAE000D5F205 /* accessoryFinderTableViewController.swift */; };
 		98B123F91B6FAAF000D5F205 /* accessoryFinderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B123F81B6FAAF000D5F205 /* accessoryFinderTableViewCell.swift */; };
 		98B123FB1B6FAB0200D5F205 /* accessoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B123FA1B6FAB0200D5F205 /* accessoryListTableViewCell.swift */; };
 		98B123FD1B6FAB0E00D5F205 /* accessoryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B123FC1B6FAB0E00D5F205 /* accessoryListTableViewController.swift */; };
@@ -21,7 +29,7 @@
 		98B124031B6FAB3E00D5F205 /* accessoryLinkerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B124021B6FAB3E00D5F205 /* accessoryLinkerTableViewCell.swift */; };
 		98B124051B6FAB4A00D5F205 /* accessoryLinkerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B124041B6FAB4A00D5F205 /* accessoryLinkerTableViewController.swift */; };
 		98B124091B6FAFD000D5F205 /* AppLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B124081B6FAFD000D5F205 /* AppLogic.swift */; };
-		98B1243C1B7158CD00D5F205 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B124131B7158CD00D5F205 /* CustomAlertView.swift */; };
+		98B20B391B7922B40050B4B0 /* accessoryFinderMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B20B381B7922B40050B4B0 /* accessoryFinderMainTableViewController.swift */; };
 		98CCBFE61B7269680090818F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98CCBFE51B7269680090818F /* Images.xcassets */; };
 		98EB73C31B6BE65100116D07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EB73C21B6BE65100116D07 /* AppDelegate.swift */; };
 		98EB73C81B6BE65100116D07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98EB73C61B6BE65100116D07 /* Main.storyboard */; };
@@ -42,12 +50,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9847A28B1B7A8CF9002AA008 /* IntroScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroScreenViewController.swift; sourceTree = "<group>"; };
+		9847A28E1B7BBE5E002AA008 /* powerStateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = powerStateTableViewCell.swift; sourceTree = "<group>"; };
+		9847A2901B7BBE78002AA008 /* brightnessTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = brightnessTableViewCell.swift; sourceTree = "<group>"; };
+		9847A2921B7BBE8D002AA008 /* desiredTempTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = desiredTempTableViewCell.swift; sourceTree = "<group>"; };
+		9847A2941B7BBE9F002AA008 /* currentTempTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = currentTempTableViewCell.swift; sourceTree = "<group>"; };
+		9847A2961B7BBEB1002AA008 /* saturationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = saturationTableViewCell.swift; sourceTree = "<group>"; };
+		9847A2981B7BBECC002AA008 /* targetHeatingCoolingModeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = targetHeatingCoolingModeTableViewCell.swift; sourceTree = "<group>"; };
+		9847A29A1B7BBEE7002AA008 /* currentDoorLockStateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = currentDoorLockStateTableViewCell.swift; sourceTree = "<group>"; };
+		9847A29C1B7BBEF0002AA008 /* fanPowerLevelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fanPowerLevelTableViewCell.swift; sourceTree = "<group>"; };
 		98B123EC1B6FAA6100D5F205 /* homesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homesTableViewController.swift; sourceTree = "<group>"; };
 		98B123EE1B6FAA7600D5F205 /* homesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homesTableViewCell.swift; sourceTree = "<group>"; };
 		98B123F01B6FAA8200D5F205 /* roomsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roomsTableViewCell.swift; sourceTree = "<group>"; };
 		98B123F21B6FAA8D00D5F205 /* roomsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roomsTableViewController.swift; sourceTree = "<group>"; };
 		98B123F41B6FAA9A00D5F205 /* homeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeManager.swift; sourceTree = "<group>"; };
-		98B123F61B6FAAE000D5F205 /* accessoryFinderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accessoryFinderTableViewController.swift; sourceTree = "<group>"; };
 		98B123F81B6FAAF000D5F205 /* accessoryFinderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accessoryFinderTableViewCell.swift; sourceTree = "<group>"; };
 		98B123FA1B6FAB0200D5F205 /* accessoryListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accessoryListTableViewCell.swift; sourceTree = "<group>"; };
 		98B123FC1B6FAB0E00D5F205 /* accessoryListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accessoryListTableViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +73,7 @@
 		98B124041B6FAB4A00D5F205 /* accessoryLinkerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accessoryLinkerTableViewController.swift; sourceTree = "<group>"; };
 		98B124061B6FAB5D00D5F205 /* Connectd.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Connectd.entitlements; sourceTree = "<group>"; };
 		98B124081B6FAFD000D5F205 /* AppLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLogic.swift; sourceTree = "<group>"; };
-		98B124131B7158CD00D5F205 /* CustomAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomAlertView.swift; path = "../../../../Downloads/JSSAlertView-master/CustomAlertView.swift"; sourceTree = "<group>"; };
+		98B20B381B7922B40050B4B0 /* accessoryFinderMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accessoryFinderMainTableViewController.swift; sourceTree = "<group>"; };
 		98CCBFE51B7269680090818F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		98EB73BD1B6BE65100116D07 /* Connectd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Connectd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98EB73C11B6BE65100116D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,6 +107,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9847A28D1B7BBE12002AA008 /* Characteristics */ = {
+			isa = PBXGroup;
+			children = (
+				9847A28E1B7BBE5E002AA008 /* powerStateTableViewCell.swift */,
+				9847A2901B7BBE78002AA008 /* brightnessTableViewCell.swift */,
+				9847A2921B7BBE8D002AA008 /* desiredTempTableViewCell.swift */,
+				9847A2941B7BBE9F002AA008 /* currentTempTableViewCell.swift */,
+				9847A2961B7BBEB1002AA008 /* saturationTableViewCell.swift */,
+				9847A2981B7BBECC002AA008 /* targetHeatingCoolingModeTableViewCell.swift */,
+				9847A29A1B7BBEE7002AA008 /* currentDoorLockStateTableViewCell.swift */,
+				9847A29C1B7BBEF0002AA008 /* fanPowerLevelTableViewCell.swift */,
+			);
+			name = Characteristics;
+			sourceTree = "<group>";
+		};
 		98EB73B41B6BE65100116D07 = {
 			isa = PBXGroup;
 			children = (
@@ -114,20 +145,21 @@
 		98EB73BF1B6BE65100116D07 /* Connectd */ = {
 			isa = PBXGroup;
 			children = (
-				98B124061B6FAB5D00D5F205 /* Connectd.entitlements */,
 				98B123F41B6FAA9A00D5F205 /* homeManager.swift */,
-				98B124081B6FAFD000D5F205 /* AppLogic.swift */,
-				98EB73C21B6BE65100116D07 /* AppDelegate.swift */,
-				98B124131B7158CD00D5F205 /* CustomAlertView.swift */,
+				9847A28B1B7A8CF9002AA008 /* IntroScreenViewController.swift */,
 				98EB73C61B6BE65100116D07 /* Main.storyboard */,
 				98EB73CB1B6BE65100116D07 /* LaunchScreen.xib */,
 				98EB73EB1B6BEBA000116D07 /* AccessoryLinker */,
 				98EB73EA1B6BEB9000116D07 /* AccessoryActions */,
+				9847A28D1B7BBE12002AA008 /* Characteristics */,
 				98EB73E91B6BEB8800116D07 /* AccessoryList */,
 				98EB73E81B6BEB6D00116D07 /* AccessoryFinder */,
 				98EB73E71B6BEB5800116D07 /* Rooms */,
 				98EB73E61B6BEB4800116D07 /* Home */,
 				98EB73C01B6BE65100116D07 /* Supporting Files */,
+				98B124061B6FAB5D00D5F205 /* Connectd.entitlements */,
+				98EB73C21B6BE65100116D07 /* AppDelegate.swift */,
+				98B124081B6FAFD000D5F205 /* AppLogic.swift */,
 				98CCBFE51B7269680090818F /* Images.xcassets */,
 			);
 			path = Connectd;
@@ -179,7 +211,7 @@
 		98EB73E81B6BEB6D00116D07 /* AccessoryFinder */ = {
 			isa = PBXGroup;
 			children = (
-				98B123F61B6FAAE000D5F205 /* accessoryFinderTableViewController.swift */,
+				98B20B381B7922B40050B4B0 /* accessoryFinderMainTableViewController.swift */,
 				98B123F81B6FAAF000D5F205 /* accessoryFinderTableViewCell.swift */,
 			);
 			name = AccessoryFinder;
@@ -188,8 +220,8 @@
 		98EB73E91B6BEB8800116D07 /* AccessoryList */ = {
 			isa = PBXGroup;
 			children = (
-				98B123FA1B6FAB0200D5F205 /* accessoryListTableViewCell.swift */,
 				98B123FC1B6FAB0E00D5F205 /* accessoryListTableViewController.swift */,
+				98B123FA1B6FAB0200D5F205 /* accessoryListTableViewCell.swift */,
 			);
 			name = AccessoryList;
 			sourceTree = "<group>";
@@ -313,20 +345,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98B1243C1B7158CD00D5F205 /* CustomAlertView.swift in Sources */,
 				98B124091B6FAFD000D5F205 /* AppLogic.swift in Sources */,
 				98B124031B6FAB3E00D5F205 /* accessoryLinkerTableViewCell.swift in Sources */,
 				98EB73C31B6BE65100116D07 /* AppDelegate.swift in Sources */,
 				98B123F31B6FAA8D00D5F205 /* roomsTableViewController.swift in Sources */,
 				98B124011B6FAB2D00D5F205 /* accessoryActionsTableViewCell.swift in Sources */,
+				9847A2951B7BBE9F002AA008 /* currentTempTableViewCell.swift in Sources */,
 				98B123EF1B6FAA7600D5F205 /* homesTableViewCell.swift in Sources */,
+				9847A2911B7BBE78002AA008 /* brightnessTableViewCell.swift in Sources */,
 				98B123F51B6FAA9A00D5F205 /* homeManager.swift in Sources */,
 				98B123ED1B6FAA6100D5F205 /* homesTableViewController.swift in Sources */,
-				98B123F71B6FAAE000D5F205 /* accessoryFinderTableViewController.swift in Sources */,
+				9847A2971B7BBEB1002AA008 /* saturationTableViewCell.swift in Sources */,
+				98B20B391B7922B40050B4B0 /* accessoryFinderMainTableViewController.swift in Sources */,
 				98B124051B6FAB4A00D5F205 /* accessoryLinkerTableViewController.swift in Sources */,
 				98B123F11B6FAA8200D5F205 /* roomsTableViewCell.swift in Sources */,
+				9847A2931B7BBE8D002AA008 /* desiredTempTableViewCell.swift in Sources */,
+				9847A28C1B7A8CF9002AA008 /* IntroScreenViewController.swift in Sources */,
+				9847A29D1B7BBEF0002AA008 /* fanPowerLevelTableViewCell.swift in Sources */,
+				9847A2991B7BBECC002AA008 /* targetHeatingCoolingModeTableViewCell.swift in Sources */,
+				9847A29B1B7BBEE7002AA008 /* currentDoorLockStateTableViewCell.swift in Sources */,
 				98B123FF1B6FAB1A00D5F205 /* accessoryActionsTableViewController.swift in Sources */,
 				98B123FB1B6FAB0200D5F205 /* accessoryListTableViewCell.swift in Sources */,
+				9847A28F1B7BBE5E002AA008 /* powerStateTableViewCell.swift in Sources */,
 				98B123FD1B6FAB0E00D5F205 /* accessoryListTableViewController.swift in Sources */,
 				98B123F91B6FAAF000D5F205 /* accessoryFinderTableViewCell.swift in Sources */,
 			);

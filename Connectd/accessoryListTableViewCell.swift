@@ -10,15 +10,28 @@ import UIKit
 
 class accessoryListTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var bulbImage: UIImageView!
+    @IBOutlet weak var nameOfAccessories: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
-
+    
+    func setUpCell(name: String) {
+        nameOfAccessories.text = name
+    }
+    
+    @IBAction func switchAction(sender: UISwitch) {
+        if(sender.on){
+            bulbImage.image = UIImage(named: "accessory on")
+        }
+        else {
+            bulbImage.image = UIImage(named: "accessory off")
+        }
+    }
 }
