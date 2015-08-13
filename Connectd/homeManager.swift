@@ -28,14 +28,15 @@ class HomeManager: HMHomeManager, HMHomeManagerDelegate {
     }
     
     func addAccessory(accessory:HMAccessory, completion:(errorMessage: String?)->Void) {
-        self.homes[currentHomeIndex].addAccessory(accessory, completionHandler: { (error) -> Void in
+        self.primaryHome.addAccessory(accessory, completionHandler: { (error) -> Void in
             completion(errorMessage: getErrorMessage(error))
         })
     }
     
     func addRoom(roomName: String, completion: (errorMessage: String?) -> Void) {
-        primaryHome.addRoomWithName(roomName, completionHandler: { (room, error) -> Void in
+        self.primaryHome.addRoomWithName(roomName, completionHandler: { (room, error) -> Void in
             completion(errorMessage: getErrorMessage(error))
+            println("error adding room: \(error)")
         })
     }
 }

@@ -51,7 +51,9 @@ class accessoryListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("accessoryListCell", forIndexPath: indexPath) as! accessoryListTableViewCell
         
-        cell.setUpCell(homeManager.primaryHome.accessories[indexPath.row].name)
+        var accessory: HMAccessory = homeManager.primaryHome.accessories[indexPath.row] as! HMAccessory
+                
+        cell.setUpCell(accessory.name,reachable: accessory.reachable)
         //characteristics are types of actions - turning on off sliders, etc.
         //make different cells for each of the actions
         return cell

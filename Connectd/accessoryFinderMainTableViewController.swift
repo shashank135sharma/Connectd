@@ -36,6 +36,8 @@ class accessoryFinderMainTableViewController: UITableViewController, HMAccessory
         mainBrowser.startSearchingForNewAccessories()
         homeManager.discoveredAccessories = mainBrowser.discoveredAccessories as! [HMAccessory]
         
+        navigationController?.navigationBar.backItem?.title = "Accessories"
+
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations

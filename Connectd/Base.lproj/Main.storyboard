@@ -5,24 +5,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="Nzu-Bh-hzM">
-            <objects>
-                <viewController id="tHz-jb-FtX" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mlq-q5-zTb"/>
-                        <viewControllerLayoutGuide type="bottom" id="1QV-mt-U52"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4SY-JR-k1y">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JwW-A3-6z9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1221" y="321.75"/>
-        </scene>
         <!--Main Tab View Controller-->
         <scene sceneID="Sp5-8b-ysU">
             <objects>
@@ -58,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="f3V-1A-k8j">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="linkCell" rowHeight="90" id="f3V-1A-k8j">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f3V-1A-k8j" id="QnS-L7-zZ8">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -82,7 +64,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PuR-EO-w3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1632" y="1812.75"/>
+            <point key="canvasLocation" x="1604" y="2332"/>
         </scene>
         <!--Create a link-->
         <scene sceneID="Tul-a5-VTF">
@@ -141,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1k-gx-5Ju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2484" y="1812.75"/>
+            <point key="canvasLocation" x="2464" y="2332"/>
         </scene>
         <!--Links-->
         <scene sceneID="pIv-xF-9Nb">
@@ -163,13 +145,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZB-AZ-aX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="811.5" y="1812.75"/>
+            <point key="canvasLocation" x="800" y="2332"/>
         </scene>
         <!--Add Homes-->
         <scene sceneID="Bzx-Mq-hsL">
             <objects>
                 <tableViewController title="Add Homes" id="8Cv-hP-U92" customClass="homesTableViewController" customModule="Connectd" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" sectionIndexMinimumDisplayRowCount="15" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="1O7-5i-ihC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="15" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="1O7-5i-ihC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -416,12 +398,36 @@
                                                 </mask>
                                             </variation>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Reachable" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOj-We-Prk">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="sRf-Z0-mvG"/>
+                                                <constraint firstAttribute="width" constant="83" id="wQp-SY-gqb"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="1" green="0.35294117650000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="sRf-Z0-mvG"/>
+                                                    <exclude reference="wQp-SY-gqb"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="sRf-Z0-mvG"/>
+                                                    <include reference="wQp-SY-gqb"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="6TT-Hc-dWJ" firstAttribute="leading" secondItem="4JO-U9-FCN" secondAttribute="trailing" constant="9" id="A1f-M6-12l">
                                             <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                                         </constraint>
                                         <constraint firstItem="7It-DE-fnd" firstAttribute="leading" secondItem="6TT-Hc-dWJ" secondAttribute="trailing" constant="90" id="ANX-xU-gzV"/>
+                                        <constraint firstItem="7It-DE-fnd" firstAttribute="leading" secondItem="TOj-We-Prk" secondAttribute="trailing" constant="8" id="Bgm-xd-hT3"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="TOj-We-Prk" secondAttribute="bottom" constant="26.5" id="J86-pH-Y3W"/>
                                         <constraint firstAttribute="centerY" secondItem="7It-DE-fnd" secondAttribute="centerY" id="Jvw-a4-ojx"/>
                                         <constraint firstItem="6TT-Hc-dWJ" firstAttribute="top" secondItem="ang-qG-BG3" secondAttribute="topMargin" constant="27" id="Nlm-my-hxk"/>
                                         <constraint firstItem="4JO-U9-FCN" firstAttribute="leading" secondItem="ang-qG-BG3" secondAttribute="leadingMargin" constant="28" id="Oih-ln-4EW">
@@ -434,6 +440,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="7It-DE-fnd" secondAttribute="trailing" constant="19" id="WHp-Go-gKa">
                                             <variation key="heightClass=regular-widthClass=compact" constant="15"/>
                                         </constraint>
+                                        <constraint firstItem="TOj-We-Prk" firstAttribute="top" secondItem="ang-qG-BG3" secondAttribute="topMargin" constant="26" id="YCs-Gz-xJ0"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="6TT-Hc-dWJ" secondAttribute="bottom" constant="33.5" id="a3o-qQ-y6c">
                                             <variation key="heightClass=regular-widthClass=compact" constant="16.5"/>
                                         </constraint>
@@ -453,6 +460,9 @@
                                         </constraint>
                                     </constraints>
                                     <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="TOj-We-Prk"/>
+                                        </mask>
                                         <mask key="constraints">
                                             <exclude reference="ik1-UY-fRK"/>
                                             <exclude reference="A1f-M6-12l"/>
@@ -461,11 +471,17 @@
                                             <exclude reference="cDn-Q8-jFK"/>
                                             <exclude reference="qyS-bi-hlq"/>
                                             <exclude reference="wGB-Tv-2ke"/>
+                                            <exclude reference="J86-pH-Y3W"/>
+                                            <exclude reference="YCs-Gz-xJ0"/>
                                             <exclude reference="ANX-xU-gzV"/>
+                                            <exclude reference="Bgm-xd-hT3"/>
                                             <exclude reference="rH0-5W-8mU"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="TOj-We-Prk"/>
+                                        </mask>
                                         <mask key="constraints">
                                             <exclude reference="Oih-ln-4EW"/>
                                             <include reference="ik1-UY-fRK"/>
@@ -475,6 +491,9 @@
                                             <include reference="a3o-qQ-y6c"/>
                                             <include reference="qyS-bi-hlq"/>
                                             <exclude reference="wGB-Tv-2ke"/>
+                                            <include reference="J86-pH-Y3W"/>
+                                            <include reference="YCs-Gz-xJ0"/>
+                                            <include reference="Bgm-xd-hT3"/>
                                             <include reference="rH0-5W-8mU"/>
                                         </mask>
                                     </variation>
@@ -482,6 +501,7 @@
                                 <connections>
                                     <outlet property="bulbImage" destination="4JO-U9-FCN" id="78x-FH-QAq"/>
                                     <outlet property="nameOfAccessories" destination="6TT-Hc-dWJ" id="Enc-a4-BOc"/>
+                                    <outlet property="reachableLabel" destination="TOj-We-Prk" id="3Bs-yb-S7G"/>
                                     <segue destination="4QV-TK-cBY" kind="show" id="6ji-EN-VND"/>
                                 </connections>
                             </tableViewCell>
@@ -610,7 +630,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFb-d5-hXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2484" y="321.75"/>
+            <point key="canvasLocation" x="2484" y="322"/>
         </scene>
         <!--Accessory Actions Table View Controller-->
         <scene sceneID="ooA-pu-sVT">
@@ -621,7 +641,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="brightnessControlCell" rowHeight="90" id="maU-RL-0GH">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="brightnessControlCell" rowHeight="90" id="maU-RL-0GH" customClass="brightnessTableViewCell" customModule="Connectd" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="maU-RL-0GH" id="LgM-AM-QAY">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -773,7 +793,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="currentTempCell" rowHeight="90" id="2Qk-nG-gAx">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="currentTempCell" rowHeight="90" id="2Qk-nG-gAx" customClass="currentTempTableViewCell" customModule="Connectd" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Qk-nG-gAx" id="8un-Lw-0N9">
@@ -933,7 +953,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="setTempCell" rowHeight="90" id="pGv-Bc-ssW">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="setTempCell" rowHeight="90" id="pGv-Bc-ssW" customClass="desiredTempTableViewCell" customModule="Connectd" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pGv-Bc-ssW" id="wa3-Rr-lEs">
@@ -1107,7 +1127,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="targetModeCell" rowHeight="90" id="Tmu-VA-KMx">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="targetModeCell" rowHeight="90" id="Tmu-VA-KMx" customClass="targetHeatingCoolingModeTableViewCell" customModule="Connectd" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tmu-VA-KMx" id="Hm2-t4-sld">
@@ -1165,7 +1185,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="setSaturationCell" rowHeight="90" id="4gl-wZ-OUm">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="setSaturationCell" rowHeight="90" id="4gl-wZ-OUm" customClass="saturationTableViewCell" customModule="Connectd" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4gl-wZ-OUm" id="Q5f-V5-Mqg">
@@ -1280,7 +1300,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="powerStateCell" rowHeight="90" id="a6p-Ge-VlH">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="powerStateCell" rowHeight="90" id="a6p-Ge-VlH" customClass="powerStateTableViewCell" customModule="Connectd" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a6p-Ge-VlH" id="2Pn-Nz-w5b">
@@ -1335,8 +1355,11 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="onOrOffSegmentedControl" destination="b58-dh-rgc" id="XWT-0t-tiP"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="lockStateCell" rowHeight="90" id="vI9-wi-xkr">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="lockStateCell" rowHeight="90" id="vI9-wi-xkr" customClass="currentDoorLockStateTableViewCell" customModule="Connectd" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vI9-wi-xkr" id="yH4-Ct-Zrt">
@@ -1461,7 +1484,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="fanPowerLevelCell" rowHeight="90" id="fvk-Ll-Lbn">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="fanPowerLevelCell" rowHeight="90" id="fvk-Ll-Lbn" customClass="fanPowerLevelTableViewCell" customModule="Connectd" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fvk-Ll-Lbn" id="CVt-R7-jeY">
@@ -1593,7 +1616,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKz-49-26W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2484" y="1053"/>
+            <point key="canvasLocation" x="2484" y="1269"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="OJx-fu-6Eb">
@@ -1785,7 +1808,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ko2-xf-ORp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3426" y="1053"/>
+            <point key="canvasLocation" x="3418" y="1277"/>
         </scene>
         <!--Accessories-->
         <scene sceneID="bcV-uS-Gik">

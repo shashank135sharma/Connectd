@@ -12,6 +12,7 @@ import HomeKit
 class homesTableViewController: UITableViewController {
 
     let homeManager = HomeManager.sharedInstance
+    var counter = 0
     
     override func viewDidLoad() {
         tableView.delegate = self
@@ -20,16 +21,21 @@ class homesTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.reloadData()
 
-        
+        NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "tableReload", userInfo: nil, repeats: false)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
+    func tableReload(){
+        tableView.reloadData()
+    }
+    
     override func viewDidAppear(animated: Bool) {
         tableView.reloadData()
+        NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "tableReload", userInfo: nil, repeats: false)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -88,7 +94,7 @@ class homesTableViewController: UITableViewController {
             self.homeManager.createHome(inputTextField!.text, completion: { (home, error) -> Void in
 
             })
-            self.tableView.reloadData()
+            NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "tableReload", userInfo: nil, repeats: false)
         }
         
         actionSheetController.addAction(nextAction)

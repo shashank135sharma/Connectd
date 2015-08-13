@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import HomeKit
 
 class powerStateTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var onOrOffSegmentedControl: UISegmentedControl!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -17,8 +20,9 @@ class powerStateTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func setUpCell( ) {
     }
 
 }

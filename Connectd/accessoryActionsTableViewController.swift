@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HomeKit
 
 class accessoryActionsTableViewController: UITableViewController {
 
@@ -32,25 +33,34 @@ class accessoryActionsTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
+        if(homeManager.primaryHome.accessories[homeManager.currentAccessoryIndex].services != nil){
+            return homeManager.primaryHome.accessories[homeManager.currentAccessoryIndex].services!.count
+        }
         return 1
     }
-
+    
+    
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        var service: HMService = homeManager.primaryHome.accessories[homeManager.currentAccessoryIndex].services?[section] as! HMService
+        return service.characteristics.count
     }
-
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
-        // Configure the cell...
+        var service: HMService = homeManager.primaryHome.accessories[homeManager.currentAccessoryIndex].services![indexPath.row] as! HMService        // Configure the cell...
 
         return cell
     }
-    */
 
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var service: HMService = homeManager.primaryHome.accessories[homeManager.currentAccessoryIndex].services?[section] as! HMService
+        return service.name
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

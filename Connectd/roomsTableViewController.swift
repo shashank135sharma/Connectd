@@ -34,7 +34,8 @@ class roomsTableViewController: UITableViewController {
             self.homeManager.addRoom(inputTextField!.text, completion: { (errorMessage) -> Void in
                 println("room adding error \(errorMessage)")
             })
-            self.tableView.reloadData()
+            NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "tableReload", userInfo: nil, repeats: false)
+
         }
         
         actionSheetController.addAction(nextAction)
@@ -48,6 +49,7 @@ class roomsTableViewController: UITableViewController {
         tableView.dataSource = self
         
         navigationController?.navigationBar.backItem?.title = "Homes"
+        NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "tableReload", userInfo: nil, repeats: false)
 
         super.viewDidLoad()
 
@@ -56,8 +58,13 @@ class roomsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
+    func tableReload(){
+        tableView.reloadData()
+    }
+    
     override func viewDidAppear(animated: Bool) {
+        NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "tableReload", userInfo: nil, repeats: false)
         tableView.reloadData()
     }
     
@@ -92,7 +99,7 @@ class roomsTableViewController: UITableViewController {
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("roomsCell", forIndexPath: indexPath) as! roomsTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("roomCell", forIndexPath: indexPath) as! roomsTableViewCell
         cell.setUpCell(homeManager.currentHomeIndex,roomIndex: homeManager.currentRoomIndex)
         return cell
     }
