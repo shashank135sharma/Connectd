@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import HomeKit
 
 class fanPowerLevelTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var fanLabel: UILabel!
+    @IBOutlet weak var fanSlider: UISlider!
+    var characteristic: HMCharacteristic?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,5 +25,11 @@ class fanPowerLevelTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    func setUpCell(characteristic: HMCharacteristic) {
+        self.characteristic = characteristic
+    }
+    @IBAction func fanLevelControl(sender: AnyObject) {
+        
+    }
 }

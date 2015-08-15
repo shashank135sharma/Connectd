@@ -12,8 +12,10 @@ import HomeKit
 class accessoryActionsTableViewController: UITableViewController {
 
     let homeManager = HomeManager.sharedInstance
+    var alreadyChanged = false
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -34,12 +36,10 @@ class accessoryActionsTableViewController: UITableViewController {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         if(homeManager.primaryHome.accessories[homeManager.currentAccessoryIndex].services != nil){
-            return homeManager.primaryHome.accessories[homeManager.currentAccessoryIndex].services!.count
+            return homeManager.primaryHome.accessories[homeManager.currentAccessoryIndex].services!.count - 1
         }
         return 1
     }
-    
-    
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
@@ -48,16 +48,85 @@ class accessoryActionsTableViewController: UITableViewController {
         return service.characteristics.count
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if(homeManager.indices != nil) {
+            for i in homeManager.indices! {
+                if i == indexPath {
+                    println("did make it 0")
+                    return 0
+                }
+            }
+        }
+        println("did make it 90")
+        return 90
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        var returnCell: AnyObject?
+        var service: HMService = homeManager.primaryHome.accessories[homeManager.currentAccessoryIndex].services![indexPath.section+1] as! HMService        // Configure the cell...
+        homeManager.currentService = service
+        var characteristic: HMCharacteristic = service.characteristics[indexPath.row] as! HMCharacteristic
+        
+        if(characteristic.characteristicType == HMCharacteristicTypePowerState) {
+            var cell = tableView.dequeueReusableCellWithIdentifier("powerStateCell", forIndexPath: indexPath) as! powerStateTableViewCell
+            cell.setUpCell(characteristic)
+            returnCell = cell
+        }
+        else if characteristic.characteristicType == HMCharacteristicTypeSaturation {
+            var cell = tableView.dequeueReusableCellWithIdentifier("setSaturationCell", forIndexPath: indexPath) as! saturationTableViewCell
+            cell.setUpCell(characteristic)
+            returnCell = cell
+        }
+        else if characteristic.characteristicType == HMCharacteristicTypeTargetDoorState {
+            var cell = tableView.dequeueReusableCellWithIdentifier("lockStateCell", forIndexPath: indexPath) as! currentDoorLockStateTableViewCell
+            cell.setUpCell(characteristic)
+            returnCell = cell
+        }
+        else if characteristic.characteristicType == HMCharacteristicTypeCurrentTemperature || characteristic.characteristicType == HMCharacteristicTypeTemperatureUnits {
+            var cell = tableView.dequeueReusableCellWithIdentifier("currentTempCell", forIndexPath: indexPath) as! currentTempTableViewCell
+            cell.setUpCell(characteristic)
+            returnCell = cell
+        }
+        else if characteristic.characteristicType == HMCharacteristicTypeTargetHeatingCooling || characteristic.characteristicType == HMCharacteristicTypeCurrentHeatingCooling {
+            var cell = tableView.dequeueReusableCellWithIdentifier("targetModeCell", forIndexPath: indexPath) as! targetHeatingCoolingModeTableViewCell
+            cell.setUpCell(characteristic)
+            returnCell = cell
 
-        var service: HMService = homeManager.primaryHome.accessories[homeManager.currentAccessoryIndex].services![indexPath.row] as! HMService        // Configure the cell...
-
-        return cell
+        }
+        else if characteristic.characteristicType == HMCharacteristicTypeTargetTemperature {
+            var cell = tableView.dequeueReusableCellWithIdentifier("setTempCell", forIndexPath: indexPath) as! desiredTempTableViewCell
+            cell.setUpCell(characteristic)
+            returnCell = cell
+        }
+        else if characteristic.characteristicType == HMCharacteristicTypeBrightness {
+            var cell = tableView.dequeueReusableCellWithIdentifier("brightnessControlCell", forIndexPath: indexPath) as! brightnessTableViewCell
+            cell.setUpCell(characteristic)
+            returnCell = cell
+        }
+        else if characteristic.characteristicType == HMCharacteristicTypeRotationSpeed {
+            var cell = tableView.dequeueReusableCellWithIdentifier("fanPowerLevelCell", forIndexPath: indexPath) as! fanPowerLevelTableViewCell
+            cell.setUpCell(characteristic)
+            returnCell = cell
+        }
+        else {
+            var cell = tableView.dequeueReusableCellWithIdentifier("unrecognizedCharacteristic", forIndexPath: indexPath) as! UITableViewCell
+            cell.hidden = true
+            returnCell = cell
+            if(!alreadyChanged){
+                homeManager.indices = [indexPath]
+                alreadyChanged = true
+            }
+            else {
+                homeManager.indices?.append(indexPath)
+            }
+            println("indices count: \(homeManager.indices?.count)")
+        }
+    
+        return returnCell as! UITableViewCell
     }
 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        var service: HMService = homeManager.primaryHome.accessories[homeManager.currentAccessoryIndex].services?[section] as! HMService
+        var service: HMService = homeManager.primaryHome.accessories[homeManager.currentAccessoryIndex].services?[section+1] as! HMService
         return service.name
     }
     

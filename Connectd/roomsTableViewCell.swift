@@ -27,7 +27,5 @@ class roomsTableViewCell: UITableViewCell {
     func setUpCell(homeIndex: Int, roomIndex: Int) {
         var room = homeManager.homes[homeIndex].rooms?[roomIndex] as! HMRoom
         roomNameLabel.text = "\(room.name)"
-        numAccessoriesLabel.text = "Number of accessories: \(room.accessories!.count)"
-        
     }
 }

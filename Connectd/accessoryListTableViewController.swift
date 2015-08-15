@@ -17,11 +17,16 @@ class accessoryListTableViewController: UITableViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.reloadData()
-        
-
+        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "reloadTable", userInfo: nil, repeats: true)
+        navigationController?.navigationBar.tintColor = UIColor(red: 33, green: 47, blue: 67, alpha: 1)
         super.viewDidLoad()
     }
 
+    func reloadTable() {
+        println("did update accessories")
+        tableView.reloadData()
+    }
+    
     override func viewDidAppear(animated: Bool) {
         tableView.reloadData()
     }
@@ -53,7 +58,7 @@ class accessoryListTableViewController: UITableViewController {
         
         var accessory: HMAccessory = homeManager.primaryHome.accessories[indexPath.row] as! HMAccessory
                 
-        cell.setUpCell(accessory.name,reachable: accessory.reachable)
+        cell.setUpCell(accessory.name,reachable: accessory.reachable, accessoryInt: indexPath.row)
         //characteristics are types of actions - turning on off sliders, etc.
         //make different cells for each of the actions
         return cell

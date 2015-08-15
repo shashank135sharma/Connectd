@@ -10,9 +10,9 @@ import UIKit
 import HomeKit
 
 class powerStateTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var onOrOffSegmentedControl: UISegmentedControl!
+    var characteristic: HMCharacteristic?
     
+    @IBOutlet weak var stateOutlet: UISegmentedControl!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,7 +22,26 @@ class powerStateTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setUpCell( ) {
+    func setUpCell(characteristic: HMCharacteristic) {
+        self.characteristic = characteristic
+        if(self.characteristic!.value as! Bool) {
+            stateOutlet.selectedSegmentIndex = 0
+        }
+        else {
+            stateOutlet.selectedSegmentIndex = 1
+        }
+    }
+    @IBAction func stateAction(sender: AnyObject) {
+        if(sender.selectedSegmentIndex == 1){
+            characteristic?.writeValue(false, completionHandler: { (error) -> Void in
+                println("Power state error: \(error)")
+            })
+        }
+        else {
+            characteristic?.writeValue(true, completionHandler: { (error) -> Void in
+                println("Power state error: \(error)")
+            })
+        }
     }
 
 }

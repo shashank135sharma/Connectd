@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import HomeKit
 
 class currentDoorLockStateTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var changeLockOutlet: UIButton!
+    @IBOutlet weak var lockLabel: UILabel!
+    @IBOutlet weak var lockImage: UIImageView!
+    var characteristic: HMCharacteristic?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,4 +27,11 @@ class currentDoorLockStateTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func setUpCell(characteristic: HMCharacteristic) {
+        self.characteristic = characteristic
+    }
+    
+    @IBAction func changeLockAction(sender: AnyObject) {
+    }
+    
 }

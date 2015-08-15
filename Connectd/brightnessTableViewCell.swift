@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import HomeKit
 
 class brightnessTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var sliderOutlet: UISlider!
+    @IBOutlet weak var brightnessLabel: UILabel!
+    
+    var characteristic: HMCharacteristic?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,7 +24,24 @@ class brightnessTableViewCell: UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+    }
+    
+    func setUpCell(characteristic: HMCharacteristic) {
+        self.characteristic = characteristic
+        if(characteristic.value is Int){
+            sliderOutlet.value = characteristic.value as! Float
+            brightnessLabel.text = "\(characteristic.value as! Float)"
+        }
+        else {
+            println("brightness is not of type int")
+        }
+    }
+    
+    @IBAction func sliderAction(sender: UISlider) {
+        characteristic?.writeValue(sender.value, completionHandler: { (error) -> Void in
+            println("Power state error: \(error)")
+        })
+        brightnessLabel.text = "\(characteristic!.value as! Float)"
     }
 
 }

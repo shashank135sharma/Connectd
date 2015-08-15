@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import HomeKit
 
 class accessoryListTableViewCell: UITableViewCell {
-
+    
+    let homeManager = HomeManager.sharedInstance
+    var currentAccessory: Int?
+    var currentState: Bool?
+    
     @IBOutlet weak var reachableLabel: UILabel!
     @IBOutlet weak var bulbImage: UIImageView!
     @IBOutlet weak var nameOfAccessories: UILabel!
@@ -23,8 +28,28 @@ class accessoryListTableViewCell: UITableViewCell {
 
     }
     
-    func setUpCell(name: String, reachable: Bool) {
+    func getValue()-> Bool {
+        var services: [HMService] = homeManager.primaryHome.accessories[currentAccessory!].services as! [HMService]
+        for service in services {
+            for characteristic in service.characteristics as! [HMCharacteristic] {
+                if(characteristic.characteristicType == HMCharacteristicTypePowerState) {
+                    var value = characteristic.value as! Bool
+                    return value
+                }
+            }
+        }
+        return true
+    }
+    
+    func setUpCell(name: String, reachable: Bool, accessoryInt: Int) {
         nameOfAccessories.text = name
+        currentAccessory = accessoryInt
+        if(getValue()) {
+            bulbImage.image = UIImage(named: "accessory on")
+        }
+        else {
+            bulbImage.image = UIImage(named: "accessory off")
+        }
         if(reachable){
             reachableLabel.textColor = UIColor.whiteColor()
             reachableLabel.text = ""
@@ -44,9 +69,29 @@ class accessoryListTableViewCell: UITableViewCell {
     @IBAction func switchAction(sender: UISwitch) {
         if(sender.on){
             bulbImage.image = UIImage(named: "accessory on")
+            var services: [HMService] = homeManager.primaryHome.accessories[currentAccessory!].services as! [HMService]
+            for service in services {
+                for characteristic in service.characteristics {
+                    if(characteristic.characteristicType == HMCharacteristicTypePowerState) {
+                        characteristic.writeValue(true, completionHandler: { (error) -> Void in
+                            println("Error in accessory list power state")
+                        })
+                    }
+                }
+            }
         }
         else {
             bulbImage.image = UIImage(named: "accessory off")
+            var services: [HMService] = homeManager.primaryHome.accessories[currentAccessory!].services as! [HMService]
+            for service in services {
+                for characteristic in service.characteristics {
+                    if(characteristic.characteristicType == HMCharacteristicTypePowerState) {
+                        characteristic.writeValue(false, completionHandler: { (error) -> Void in
+                            println("Error in accessory list power state")
+                        })
+                    }
+                }
+            }
         }
     }
 }

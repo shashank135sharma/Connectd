@@ -16,7 +16,7 @@ class roomsTableViewController: UITableViewController {
     @IBAction func addButton(sender: AnyObject) {
         var inputTextField: UITextField?
         //Create the AlertController
-        let actionSheetController: UIAlertController = UIAlertController(title: "Add a home", message: "Enter a name for your new room in home \(homeManager.primaryHome.name)", preferredStyle: .Alert)
+        let actionSheetController: UIAlertController = UIAlertController(title: "Add a room", message: "Enter a name for your new room in home \(homeManager.primaryHome.name)", preferredStyle: .Alert)
         
         actionSheetController.addTextFieldWithConfigurationHandler { textField -> Void in
             inputTextField = textField
@@ -34,7 +34,7 @@ class roomsTableViewController: UITableViewController {
             self.homeManager.addRoom(inputTextField!.text, completion: { (errorMessage) -> Void in
                 println("room adding error \(errorMessage)")
             })
-            NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "tableReload", userInfo: nil, repeats: false)
+            NSTimer.scheduledTimerWithTimeInterval(0.6, target: self, selector: "tableReload", userInfo: nil, repeats: false)
 
         }
         
@@ -49,7 +49,9 @@ class roomsTableViewController: UITableViewController {
         tableView.dataSource = self
         
         navigationController?.navigationBar.backItem?.title = "Homes"
-        NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "tableReload", userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(0.6, target: self, selector: "tableReload", userInfo: nil, repeats: false)
+        
+        navigationController?.navigationBar.tintColor = UIColor(red: 33, green: 47, blue: 67, alpha: 1)
 
         super.viewDidLoad()
 
@@ -64,7 +66,7 @@ class roomsTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "tableReload", userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(0.6, target: self, selector: "tableReload", userInfo: nil, repeats: false)
         tableView.reloadData()
     }
     
@@ -97,7 +99,10 @@ class roomsTableViewController: UITableViewController {
         }
     }
 
-
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 90
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("roomCell", forIndexPath: indexPath) as! roomsTableViewCell
         cell.setUpCell(homeManager.currentHomeIndex,roomIndex: homeManager.currentRoomIndex)

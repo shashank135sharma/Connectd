@@ -58,9 +58,7 @@ class accessoryFinderMainTableViewController: UITableViewController, HMAccessory
     }
     
     override func viewDidDisappear(animated: Bool) {
-        mainBrowser.stopSearchingForNewAccessories()
-        timer!.delete(self)
-        
+        mainBrowser.stopSearchingForNewAccessories()        
     }
     // MARK: - Table view data source
 
@@ -71,29 +69,19 @@ class accessoryFinderMainTableViewController: UITableViewController, HMAccessory
     }
 
     @IBAction func doneAdding(sender: AnyObject) {
-//        for accessory in homeManager.selectedAccessories {
-//            homeManager.addAccessory(accessory, completion: { (errorMessage) -> Void in
-//                println("adding accessory error: \(errorMessage)")
-//            })
-//        }
         if(selectedAccessory != nil){
             homeManager.addAccessory(selectedAccessory, completion: { (errorMessage) -> Void in
                 println("Adding error:  \(errorMessage)")
             })
+            navigationController?.popViewControllerAnimated(true)
         }
-        navigationController?.popViewControllerAnimated(true)
+        else {
+            
+        }
+        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-//        if(homeManager.discoveredAccessories !=  nil){
-//            println("DiscoveredAccessories: \(homeManager.discoveredAccessories.count)")
-//            return homeManager.discoveredAccessories!.count
-//        }
-//        else {
-//            return 0
-//        }
         homeManager.discoveredAccessories = mainBrowser.discoveredAccessories as! [HMAccessory]
         println("Num accessories discovered: \(homeManager.discoveredAccessories.count)")
         return homeManager.discoveredAccessories.count

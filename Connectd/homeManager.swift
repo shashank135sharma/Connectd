@@ -12,13 +12,22 @@ import HomeKit
 class HomeManager: HMHomeManager, HMHomeManagerDelegate {
     static let sharedInstance = HomeManager()
     
-    //var totalAccessories: [HMAccessory]?
     var discoveredAccessories: [HMAccessory]!
     var selectedAccessories: [HMAccessory]!
+    
+    var indices: [NSIndexPath]?
+    
+    var currentService: HMService?
     
     var currentHomeIndex: Int = 0
     var currentRoomIndex: Int = 0 
     var currentAccessoryIndex: Int = 0
+    
+    var targetMode: HMCharacteristic?
+    var currentMode: HMCharacteristic?
+    
+    var tempUnit: HMCharacteristic?
+    var currentTempCharacteristic: HMCharacteristic?
     
     func createHome(homeName: String, completion:(home:HMHome!, errorMessage:String?)->Void) {
         addHomeWithName(homeName, completionHandler: { (home, error) -> Void in

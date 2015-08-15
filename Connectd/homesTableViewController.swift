@@ -20,7 +20,7 @@ class homesTableViewController: UITableViewController {
         tableView.reloadData()
         super.viewDidLoad()
         tableView.reloadData()
-
+        self.tableView.allowsMultipleSelectionDuringEditing = false
         NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: "tableReload", userInfo: nil, repeats: false)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
