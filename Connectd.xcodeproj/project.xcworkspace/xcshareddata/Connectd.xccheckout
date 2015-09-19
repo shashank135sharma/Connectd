@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>67568650-86CD-41BC-BD24-7F7F72C5070A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Connectd</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>20AB649BE4075828D73C92657E1F0D9365CE959A</key>
+		<string>https://bitbucket.org/shashank135sharma/connecd-final.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Connectd.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>20AB649BE4075828D73C92657E1F0D9365CE959A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/shashank135sharma/connecd-final.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>20AB649BE4075828D73C92657E1F0D9365CE959A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>20AB649BE4075828D73C92657E1F0D9365CE959A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Connectd</string>
+		</dict>
+	</array>
+</dict>
+</plist>
