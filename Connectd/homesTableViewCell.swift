@@ -27,7 +27,7 @@ class homesTableViewCell: UITableViewCell {
         homeNameLabel.text = homeName
         numberOfRoomsLabel.text = "Number of rooms: \(numberOfRooms)"
         //numberOfAccessoriesLabel.text = "Number of accessoirs: \(numberOfAccessories)"
-        numberOfAccessoriesLabel.text = "Number of accessories: 6"
+        numberOfAccessoriesLabel.text = "Number of accessories: \(numberOfAccessories)"
 
     }
 }

@@ -33,8 +33,11 @@ class accessoryListTableViewCell: UITableViewCell {
         for service in services {
             for characteristic in service.characteristics as! [HMCharacteristic] {
                 if(characteristic.characteristicType == HMCharacteristicTypePowerState) {
-                    var value = characteristic.value as! Bool
-                    return value
+                    if(characteristic.value != nil){
+                        var value = characteristic.value as! Bool
+                        return value
+                    }
+                    return true
                 }
             }
         }
@@ -51,7 +54,6 @@ class accessoryListTableViewCell: UITableViewCell {
             bulbImage.image = UIImage(named: "accessory off")
         }
         if(reachable){
-            reachableLabel.textColor = UIColor.whiteColor()
             reachableLabel.text = ""
         }
         else {
