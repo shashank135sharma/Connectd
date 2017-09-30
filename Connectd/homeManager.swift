@@ -1,5 +1,5 @@
 //
-//  HomeObject.swift
+//  HomeManager.swift
 //  Connectd
 //
 //  Created by Shashank Sharma on 7/20/15.

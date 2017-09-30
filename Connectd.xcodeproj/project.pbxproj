@@ -153,6 +153,7 @@
 				9847A29E1B7D131E002AA008 /* tabBarViewController.swift */,
 				98EB73C61B6BE65100116D07 /* Main.storyboard */,
 				98EB73CB1B6BE65100116D07 /* LaunchScreen.xib */,
+				98B124061B6FAB5D00D5F205 /* Connectd.entitlements */,
 				98EB73EB1B6BEBA000116D07 /* AccessoryLinker */,
 				98EB73EA1B6BEB9000116D07 /* AccessoryActions */,
 				98EB73E91B6BEB8800116D07 /* AccessoryList */,
@@ -160,7 +161,6 @@
 				98EB73E71B6BEB5800116D07 /* Rooms */,
 				98EB73E61B6BEB4800116D07 /* Home */,
 				98EB73C01B6BE65100116D07 /* Supporting Files */,
-				98B124061B6FAB5D00D5F205 /* Connectd.entitlements */,
 				98EB73C21B6BE65100116D07 /* AppDelegate.swift */,
 				98B124081B6FAFD000D5F205 /* AppLogic.swift */,
 			);

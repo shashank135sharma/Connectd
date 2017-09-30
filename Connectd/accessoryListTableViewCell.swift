@@ -18,6 +18,8 @@ class accessoryListTableViewCell: UITableViewCell {
     @IBOutlet weak var reachableLabel: UILabel!
     @IBOutlet weak var bulbImage: UIImageView!
     @IBOutlet weak var nameOfAccessories: UILabel!
+    @IBOutlet weak var accessorySwitch: UISwitch!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -49,9 +51,11 @@ class accessoryListTableViewCell: UITableViewCell {
         currentAccessory = accessoryInt
         if(getValue()) {
             bulbImage.image = UIImage(named: "accessory on")
+            accessorySwitch.on = true
         }
         else {
             bulbImage.image = UIImage(named: "accessory off")
+            accessorySwitch.on = false
         }
         if(reachable){
             reachableLabel.text = ""

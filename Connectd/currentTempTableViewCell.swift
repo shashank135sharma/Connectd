@@ -19,7 +19,6 @@ class currentTempTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     func updateTemp(){
@@ -51,6 +50,8 @@ class currentTempTableViewCell: UITableViewCell {
     
     func setUpCell(characteristic: HMCharacteristic) {
         
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateTemp", userInfo: nil, repeats: true)
+
         if(characteristic.characteristicType == HMCharacteristicTypeTemperatureUnits) {
             homeManager.tempUnit = characteristic
             if(characteristic.value as! Int == 0){
@@ -64,14 +65,13 @@ class currentTempTableViewCell: UITableViewCell {
         }
         else {
             homeManager.currentTempCharacteristic = characteristic
-            NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateTemp", userInfo: nil, repeats: true)
         }
         
         if(homeManager.currentTempCharacteristic!.value is Float)
         {
             var temp: Float = characteristic.value as! Float
             if(isCelcius){
-                currentTempLabel.text = "\(ceil(temp))°"
+                currentTempLabel.text = "\((temp))°"
                 tempUnitOutlet.selectedSegmentIndex = 0
                 homeManager.tempUnit?.writeValue(0, completionHandler: { (error) -> Void in
                     println("error current temp: \(error)")

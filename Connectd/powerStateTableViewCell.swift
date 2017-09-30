@@ -24,11 +24,13 @@ class powerStateTableViewCell: UITableViewCell {
     
     func setUpCell(characteristic: HMCharacteristic) {
         self.characteristic = characteristic
-        if(self.characteristic!.value as! Bool) {
-            stateOutlet.selectedSegmentIndex = 0
-        }
-        else {
-            stateOutlet.selectedSegmentIndex = 1
+        if(self.characteristic != nil) {
+            if(self.characteristic!.value as! Bool) {
+                stateOutlet.selectedSegmentIndex = 0
+            }
+            else {
+                stateOutlet.selectedSegmentIndex = 1
+            }
         }
     }
     @IBAction func stateAction(sender: AnyObject) {
